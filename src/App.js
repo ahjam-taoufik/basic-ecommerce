@@ -1,22 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
+import { useState } from 'react';
 
 function App() {
+   const [totalClick, setTotalClick] = useState(0)
+
+  const HandleTotalClick=()=>{
+    setTotalClick(totalClick+1)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+           {totalClick} <br/><br/>
+         <Button title='this is the frist button' handleButtonTotalClick={HandleTotalClick}  />
+         <Button title='this is the second button' handleButtonTotalClick={HandleTotalClick} />
+         <Button title='this is the thirth button' handleButtonTotalClick={HandleTotalClick} />
+
       </header>
     </div>
   );
